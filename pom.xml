@@ -14,7 +14,6 @@
 	
 	<!-- 项目属性 -->
 	<properties>
-		
 		<!-- main version setting -->
 		<spring.version>4.1.9.RELEASE</spring.version>
 		<validator.version>5.2.4.Final</validator.version>
@@ -54,7 +53,6 @@
 		<webserver.port>8181</webserver.port>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<downloadSources>true</downloadSources>
-		
 	</properties>
 	
 	<!-- 设定主仓库，按设定顺序进行查找。 -->
@@ -912,6 +910,8 @@
 			<build>
 				<plugins>
 					<plugin>
+						<!--In my project's POM, I use maven-resources-plugin to set some properties from a file. However, Intellij flags these property references in the POM with the error "cannot resolve symbol", presumably because it cannot see them being defined anywhere. Is there a way to suppress this error?-->
+						<!--1.Setting->Editor->Inspections and then disable the inspection Maven -> Maven Model Inspection-->
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-antrun-plugin</artifactId>
 						<version>1.8</version>
